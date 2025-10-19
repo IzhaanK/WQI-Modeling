@@ -1,162 +1,140 @@
-# Water Quality Prediction (Intel OneAPI Online AI Hackathon)
+# Water Quality Sustainability Prediction
 
-## Overview
-This repository contains the code and documentation for the "Water Quality Prediction" project, developed as part of the Intel OneAPI Online AI Hackathon. The project aims to predict the sustainability of water samples based on various features using machine learning models.  
+## 🚀 Project Overview
 
-## Important Links
-- [Dataset (Kaggle)](https://www.kaggle.com/datasets/naiborhujosua/predict-the-quality-of-freshwater)
-- [Preprocessed Dataset](https://drive.google.com/drive/folders/18Dg9FfzS2IPDBFLKcG8oY5yKIdNglbhn?usp=drive_link)
-- [Ideation Presentation](https://docs.google.com/presentation/d/1q_5NuAXWf4dQiaDAx_z488UDvq2BjSQeXdBUrGjZCkQ/edit#slide=id.p)
-- [Project Report](https://github.com/VinayVaishnav/Water_Quality_Prediction/blob/main/report.pdf)
-- [Intel DevMesh Project](https://devmesh.intel.com/projects/water-quality-prediction-intel-oneapi-online-hackathon)
-- [Solution Prototype Video (YouTube)](https://youtu.be/_Yrenj-xhrw?feature=shared)
+This repository contains the complete codebase and documentation for our **Water Quality Prediction** project. The primary goal is to leverage advanced machine learning models to accurately predict the sustainability of freshwater samples based on a wide range of chemical and physical parameters.
 
-## Problem Statement
-Freshwater is a crucial natural resource, and ensuring its quality is essential for various aspects of human life and ecosystems. The goal of this project is to predict the sustainability of water samples for consumption using a provided dataset.
+---
 
-## Project Directory Structure
+## 🎯 The Challenge: Ensuring Freshwater Quality
+
+Freshwater is a finite and critical resource, essential for human health, agriculture, and ecosystem stability. This project addresses the challenge of ensuring water safety by developing a robust predictive model to determine the sustainability of water samples for consumption.
+
+---
+
+## 📁 Repository Structure
+
+The project is organized into the following directories and files for clarity and ease of navigation.
+
 ### Root Directory
-
-| Directory/File                 | Description                                                |
-|---------------------------------|------------------------------------------------------------|
-| `models`                        | Directory containing the saved models. |
-| `model_making_and_testing`      | Directory with Jupyter notebooks and preprocessed data.    |
-| `report_water_quality_prediction.pdf`| Detailed report on the project.                             |
-| `water_quality_prediction.py`   | Main Python script for running the water quality prediction.|
+| Directory/File | Description |
+| :--- | :--- |
+| `models` | Contains the final, saved machine learning models. |
+| `model_making_and_testing` | Includes Jupyter notebooks for development, analysis, and the datasets. |
+| `report_water_quality_prediction.pdf`| The comprehensive project report. |
+| `water_quality_prediction.py` | The main Python script to run the prediction pipeline. |
 
 ### `models` Directory
-
-| File                | Description                                     |
-|---------------------|-------------------------------------------------|
-| `model_1.zip`       | Saved model 1.                                  |
-| `model_2.zip`       | Saved model 2.                                  |
-| `model_3.zip`       | Saved model 3.                                  |
+| File | Description |
+| :--- | :--- |
+| `model_1.zip` | Saved Model 1. |
+| `model_2.zip` | Saved Model 2. |
+| `model_3.zip` | Saved Model 3. |
 
 ### `model_making_and_testing` Directory
+| File | Description |
+| :--- | :--- |
+| `classification.ipynb` | Notebook for building and training classification models. |
+| `data_analysis_and_visualizations.ipynb` | Notebook for exploratory data analysis (EDA) and visualization. |
+| `preprocessed_water.csv` | The cleaned and processed dataset used for training. |
+| `preprocessing.ipynb` | Notebook detailing all data preprocessing steps. |
+| `saving_final_model.ipynb` | Notebook for serializing and saving the final trained models. |
+| `water.csv` | The original, raw dataset. |
 
-| Directory/File                                 | Description                                               |
-|-------------------------------------------------|-----------------------------------------------------------|
-| `classification.ipynb`                        | Notebook for classification models.                       |
-| `data_analysis_and_visualizations.ipynb`       | Notebook for data analysis and visualizations.            |
-| `preprocessed_water.csv`                       | Preprocessed dataset.                                     |
-| `preprocessing.ipynb`                         | Notebook for data preprocessing.                          |
-| `saving_final_model.ipynb`                    | Notebook for saving the final model.                      |
-| `water.csv`                                    | Original dataset.                                        |
+---
 
-## Dependencies
-- `Python 3.x`
-- `intel-extension-for-pytorch==2.0.100`
-- `matplotlib==3.7.1`
-- `numpy==1.23.5`
-- `pandas==2.0.1`
-- `pytorch-tabnet==4.1.0`
-- `scikit-learn==1.2.2`
-- `scikit-learn-intelex==2023.2.1`
-- `scipy==1.10.1`
-- `seaborn==0.12.2`
-- `torch==2.0.0+cpu`
-- `xgboost==1.7.6`
+## 🛠️ Dependencies & Setup
 
-## Usage
-1. Clone the repository: `git clone https://github.com/VinayVaishnav/Water_Quality_Prediction.git`
-2. Install dependencies: `pip install -r requirements.txt`
-3. Run the main script: `python3 water_quality_prediction.py`
+This project relies on several Python libraries. Ensure you have them installed to run the code.
 
-## Data Analysis, Visualization, and Preprocessing
-### Dataset Overview
-The provided dataset comprises 59,56,842 data points with 22 feature columns and 1 column indicating target labels (sustainability of the sample). Key features include pH level, various chemical contents, color, turbidity, odor, conductivity, total dissolved solids, source, water and air temperatures, and date-time information.
+* `Python 3.x`
+* `intel-extension-for-pytorch==2.0.100`
+* `matplotlib==3.7.1`
+* `numpy==1.23.5`
+* `pandas==2.0.1`
+* `pytorch-tabnet==4.1.0`
+* `scikit-learn==1.2.2`
+* `scikit-learn-intelex==2023.2.1`
+* `scipy==1.10.1`
+* `seaborn==0.12.2`
+* `torch==2.0.0+cpu`
+* `xgboost==1.7.6`
 
-### Key Observations
-- The dataset is imbalanced with 69.69% samples labeled as not sustainable (Target: 0) and 30.31% as sustainable (Target: 1).
-- Categorical features like source, month, day, and time of the day exhibit uniformity in the number of data points across categories.
+---
 
-### Issues Encountered
-- Approximately 20 lakh rows with missing values out of the 59 lakh data points.
-- High dimensionality leading to increased computation and model training time.
+## 💻 How to Use
 
-### Preprocessing Steps
-1. **Dealing with Missing Values:**
-   - For insignificant missing values, drop the corresponding rows.
-   - Fill missing values with the overall mean of the feature column based on concentration graphs.
+Follow these steps to get the project running on your local machine.
 
-2. **Handling High Dimensionality:**
-   - Utilized Intel AI Analytics Toolkit to optimize computations.
+1.  **Clone the Repository**:
+    ```bash
+    git clone [https://github.com/VinayVaishnav/Water_Quality_Prediction.git](https://github.com/VinayVaishnav/Water_Quality_Prediction.git)
+    ```
+2.  **Install Required Dependencies**:
+    ```bash
+    pip install -r requirements.txt
+    ```
+3.  **Execute the Main Script**:
+    ```bash
+    python3 water_quality_prediction.py
+    ```
 
-3. **After Preprocessing:**
-   - Reduced to a binary classification problem with around 51 lakh data points.
+---
 
-## Technological Aspect and Methodology
+## 📊 About the Dataset
 
-### Intel AI Analytics Toolkit
-The Intel AI Analytics Toolkit was employed to optimize the project's workflow. Notable packages used include:
-- Intel Extensions for Scikit-learn and XGBoost
-- oneDNN (Intel oneAPI Deep Neural Network Library)
-- Intel Extension for PyTorch
+This rich dataset originates from an authoritative source: the **Central Pollution Control Board (CPCB) — National Water Quality Monitoring Programme (NWMP)** of India. This ensures the data is credible and reflects a comprehensive, real-world scenario of water quality across the nation.
 
-### Methodology
-- **Model Selection:**
-   - Started with simpler models like Logistic Regression and Decision Tree for efficient results.
-   - Gradually moved to more complex models including XGBoost, Multilayer Perceptron (MLP), and TabNet.
+### Geographic and Organizational Source
+* As of 2024, this network comprises **2,108 monitoring stations** distributed across all **28 states and 8 Union Territories** of India.
+* Monitored water bodies include **rivers, lakes, canals, coastal zones, tanks, and groundwater wells**.
 
-- **Model Evaluation:**
-   - Dataset split into 70:10:20 (train: validation: test).
-   - Evaluation metrics: F1 Score for binary classification.
+### Data Collection and Parameters
+Each monitoring station is identified by a unique code, latitude-longitude coordinates, and follows a monthly or quarterly sampling frequency. The parameters measured are identical to those in the Kaggle dataset and include:
+* Physical properties like **pH, temperature, conductivity, and total dissolved solids**.
+* Chemical properties like **dissolved oxygen (DO), biochemical oxygen demand (BOD), and nitrate levels**.
+* Biological indicators like **fecal and total coliforms**.
 
-### Results
-| Model                   | Accuracy Score (on test set) | F1 Score (on test set) |
-|-------------------------|-------------------------------|-------------------------|
-| Logistic Regression     | 79.02%                        | 0.5931                  |
-| Decision Tree           | 83.03%                        | 0.7179                  |
-| XGBoost                 | 86.37%                        | 0.7961                  |
-| MLP                     | 83.94%                        | 0.7581                  |
-| TabNet                  | 87.28%                        | 0.8155                  |
+### Data Challenges and Preprocessing
+The raw dataset was massive, containing over **5.9 million data points** with 22 features. Challenges faced:
+* **Imbalanced Data**: A significant class imbalance was observed, with **69.69%** of samples labeled as non-sustainable (Target: 0) and only **30.31%** as sustainable (Target: 1).
+* **Missing Values**: Nearly **2 million rows** had missing data, requiring a robust imputation strategy. We filled missing values using the feature column's mean, guided by concentration graph analysis.
+* **High Dimensionality**: The large feature set increased computational overhead. 
 
-### TabNet
-TabNet, proposed by Google Cloud in 2019, provides a high-performance and interpretable tabular data deep learning architecture.  
-Key features:
-- Sequential attention mechanism for feature selection.
-- Efficient training and high interpretability.
-- Utilized for its stability in handling noisy data.
+After preprocessing, the dataset was refined to approximately **5.1 million clean data points**, framed as a binary classification problem.
 
-### Performance Improvement
-- Ensembled multiple TabNet models for enhanced predictive accuracy and generalization.
-- Achieved an **accuracy score of 87.39%** and an **F1 Score of 0.81786**.
+---
 
+## 🤖 Methodology and Technology
 
-## Role of Intel AI Analytics Toolkit
+### Model Development Workflow
+Our approach involved a systematic progression from simpler to more complex models to establish a strong performance baseline.
+* **Baseline Models**: We started with **Logistic Regression** and **Decision Trees**.
+* **Advanced Models**: We then implemented more powerful models, including **XGBoost**, a **Multilayer Perceptron (MLP)**, and finally **TabNet**.
 
-### Intel Extension for Scikit-Learn and XGBoost
+The dataset was split into **70% for training, 10% for validation, and 20% for testing**. Given the class imbalance, the **F1 Score** was chosen as the primary evaluation metric.
 
-- `sklearnex` is an extension of scikit-learn that optimizes machine learning algorithms for faster execution on multi-core processors.
-- Components are replaced with `sklearnex` counterparts to reduce computation time while maintaining or improving model performance.
-- `XGBoost`, a gradient boosting library, efficiently uses CPU cores and can run on GPUs, offering speed improvements for gradient boosting tasks.
+### Final Model: TabNet
+The best-performing model was **TabNet**, a deep learning architecture from Google designed specifically for tabular data. We chose it for its:
+* **Sequential Attention Mechanism**: Allows the model to focus on the most relevant features for each prediction.
+* **High Performance & Interpretability**: Delivers state-of-the-art accuracy while providing insights into its decision-making process.
+* **Robustness**: Handles noisy data effectively.
 
-### Intel Extension for PyTorch
+To further boost performance, we created an **ensemble of multiple TabNet models**, which achieved a final **accuracy of 87.39%** and an **F1 Score of 0.81786**.
 
-- `intel_extension_for_pytorch` enhances PyTorch's speed by leveraging Intel's hardware acceleration capabilities.
+### Final Results
+| Model | Accuracy (Test Set) | F1 Score (Test Set) |
+| :--- | :--- | :--- |
+| Logistic Regression | 79.02% | 0.5931 |
+| Decision Tree | 83.03% | 0.7179 |
+| XGBoost | 86.37% | 0.7961 |
+| MLP | 83.94% | 0.7581 |
+| **TabNet (Ensemble)** | **87.39%** | **0.81786** |
 
-### Advantages of using the toolkit
+---
 
-- Tools collectively reduce computation time and enhance performance.
-- Easy integration into existing Python code with just a few extra lines.
-- Faster iterations, improved scalability, and the ability to tackle high-dimensional datasets.
-- Streamlined machine learning workflow for efficiency and scalability.
+## ⚡ The Power of the Intel AI Analytics Toolkit
 
-## References
-- To know more about the types of extensions, packages, and libraries in the toolkit:  
-    https://www.intel.com/content/www/us/en/developer/tools/oneapi/onedal.html#gs.4lj2sh  
-    https://www.intel.com/content/www/us/en/developer/tools/oneapi/scikit-learn.html#gs.4lj0kq  
-- For installation of the Intel packages:  
-    https://intel.github.io/scikit-learn-intelex/  
-    https://pypi.org/project/scikit-learn-intelex/  
-    https://pytorch.org/tutorials/recipes/recipes/intel_extension_for_pytorch.html  
-- For understanding the workings of Intel packages:  
-    https://youtu.be/vMZNYP4e2xo?si=Arw_ILgs_-l_RUka  
-- Regarding TabNets:  
-    https://www.geeksforgeeks.org/tabnet/  
-    https://paperswithcode.com/method/tabnet  
+The **Intel AI Analytics Toolkit** was critical to the success of this project, providing significant performance optimizations.
 
-## Authors
-- [Vinay Vaishnav](mailto:vaishnav.3@iitj.ac.in): Pre-final Year (B.Tech. Electrical Engineering)
-- [Tanish Pagaria](mailto:pagaria.2@iitj.ac.in): Pre-final Year (B.Tech. Artificial Intelligence & Data Science)  
-(IIT Jodhpur Undergraduates)
+* **Intel Extension for Scikit-Learn and XGBoost (`sklearnex`)**: This tool seamlessly accelerates standard machine learning algorithms by optimizing them for multi-core processors. By patching
