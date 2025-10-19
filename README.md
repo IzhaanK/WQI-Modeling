@@ -67,7 +67,8 @@ Follow these steps to get the project running on your local machine.
 
 1.  **Clone the Repository**:
     ```bash
-    git clone [https://github.com/VinayVaishnav/Water_Quality_Prediction.git](https://github.com/VinayVaishnav/Water_Quality_Prediction.git)
+    git clone [https://github.com/IzhaanK/WQI-Modeling](https://github.com/IzhaanK/WQI-Modeling)
+    
     ```
 2.  **Install Required Dependencies**:
     ```bash
@@ -75,7 +76,7 @@ Follow these steps to get the project running on your local machine.
     ```
 3.  **Execute the Main Script**:
     ```bash
-    python3 water_quality_prediction.py
+    python3 main.py
     ```
 
 ---
@@ -108,8 +109,8 @@ After preprocessing, the dataset was refined to approximately **5.1 million clea
 
 ### Model Development Workflow
 Our approach involved a systematic progression from simpler to more complex models to establish a strong performance baseline.
-* **Baseline Models**: We started with **Logistic Regression** and **Decision Trees**.
-* **Advanced Models**: We then implemented more powerful models, including **XGBoost**, a **Multilayer Perceptron (MLP)**, and finally **TabNet**.
+* **Baseline Models**: started with **Logistic Regression** and **Decision Trees**.
+* **Advanced Models**: then implemented more powerful models, including **XGBoost**, a **Multilayer Perceptron (MLP)**, and finally **TabNet**.
 
 The dataset was split into **70% for training, 10% for validation, and 20% for testing**. Given the class imbalance, the **F1 Score** was chosen as the primary evaluation metric.
 
