@@ -12,36 +12,6 @@ Freshwater is a finite and critical resource, essential for human health, agricu
 
 ---
 
-## 📁 Repository Structure
-
-The project is organized into the following directories and files for clarity and ease of navigation.
-
-### Root Directory
-| Directory/File | Description |
-| :--- | :--- |
-| `models` | Contains the final, saved machine learning models. |
-| `model_making_and_testing` | Includes Jupyter notebooks for development, analysis, and the datasets. |
-| `main.py` | The main Python script to run the prediction pipeline. |
-
-### `models` Directory
-| File | Description |
-| :--- | :--- |
-| `model_1.zip` | Saved Model 1. |
-| `model_2.zip` | Saved Model 2. |
-| `model_3.zip` | Saved Model 3. |
-
-### `model_making_and_testing` Directory
-| File | Description |
-| :--- | :--- |
-| `classification.ipynb` | Notebook for building and training classification models. |
-| `data_analysis_and_visualizations.ipynb` | Notebook for exploratory data analysis (EDA) and visualization. |
-| `preprocessed_water.csv` | The cleaned and processed dataset used for training. |
-| `preprocessing.ipynb` | Notebook detailing all data preprocessing steps. |
-| `saving_final_model.ipynb` | Notebook for serializing and saving the final trained models. |
-| `water.csv` | The original, raw dataset. |
-
----
-
 ## 🛠️ Dependencies & Setup
 
 This project relies on several Python libraries. Ensure you have them installed to run the code.
