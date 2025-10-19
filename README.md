@@ -21,8 +21,7 @@ The project is organized into the following directories and files for clarity an
 | :--- | :--- |
 | `models` | Contains the final, saved machine learning models. |
 | `model_making_and_testing` | Includes Jupyter notebooks for development, analysis, and the datasets. |
-| `report_water_quality_prediction.pdf`| The comprehensive project report. |
-| `water_quality_prediction.py` | The main Python script to run the prediction pipeline. |
+| `main.py` | The main Python script to run the prediction pipeline. |
 
 ### `models` Directory
 | File | Description |
@@ -133,8 +132,3 @@ To further boost performance, we created an **ensemble of multiple TabNet models
 
 ---
 
-## ⚡ The Power of the Intel AI Analytics Toolkit
-
-The **Intel AI Analytics Toolkit** was critical to the success of this project, providing significant performance optimizations.
-
-* **Intel Extension for Scikit-Learn and XGBoost (`sklearnex`)**: This tool seamlessly accelerates standard machine learning algorithms by optimizing them for multi-core processors. By patching
