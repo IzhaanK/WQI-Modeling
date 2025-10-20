@@ -37,7 +37,7 @@ Follow these steps to get the project running on your local machine.
 
 1.  **Clone the Repository**:
     ```bash
-    git clone [https://github.com/IzhaanK/WQI-Modeling](https://github.com/IzhaanK/WQI-Modeling)
+    git clone https://github.com/IzhaanK/WQI-Modeling
     
     ```
 2.  **Install Required Dependencies**:
